@@ -1,54 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
-    <link rel="stylesheet" href="Atividade01.style.css">
+    <title>Title</title>
+    <link rel="stylesheet" href="atividade01.style.css">
 </head>
-
 <body>
-
-<form>
-
-    <label for="nome">Nome Completo:</label>
-    <input id="nome" type="text"/>
+<form id="formulario">
+    <label for="nome" >Nome completo:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
 
     <label for="email">Email:</label>
-    <input id="email" type="email"/>
+    <input type="text" id="email" name="email" placeholder="Digite seu email">
 
     <label for="senha">Senha:</label>
-    <input id="senha" type="password"/>
+    <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
 
-    <label for="idade">Idade:</label>
-    <input id="idade" type="number"/>
+    <label for="idade">Idade</label>
+    <input type="number" id="idade">
 
-    <label for="data">Data de Nascimento:</label>
-    <input id="data" type="date"/>
-
-    <p>Gênero:</p>
-
-    <label>Masculino <input id="masc" name="genero" type="radio"></label>
-    <label>Feminino <input id="fem" name="genero" type="radio"></label>
-    <label>Outros <input id="outros" name="genero" type="radio"></label>
+    <label for="nascimento">Nascimento</label>
+    <input id="nascimento" type="date"/>
 
 
+    <div>
+        <label>Genero:</label>
+        <label><input type="radio" name="genero" value="masculino" required>Masculino</label>
 
+        <label><input   type="radio" name="genero" value="feminino"> Feminino</label>
 
-    <p>Turnos Disponíveis:</p>
+        <label><input type="radio" name="genero" value="outros">Outros</label>
+    </div>
 
-   <label>Matutino<input type="checkbox"></label>
-    <label>Vespetino<input type="checkbox"></label>
-    <label>Noturno<input type="checkbox"></label>
+    <label>Turno</label>
+    <label><input type="checkbox" name="turno" value="matutino">Matutino</label>
 
+    <label><input type="checkbox" name="turno" value="vespertino" >Vespertino</label>
 
+    <label><input type="checkbox" name="turno" value="noturno">Noturno</label>
 
-    <label for="cor">Cor destaque:</label>
-    <input id="cor" name="cor" type="color"/>
+    <label for="CorFavorita">Cor de destaque</label>
+    <input id="corFavorita" type="color"/>
+
+  <button id="BtnEnviar" type="submit">Enviar</button>
 
 </form>
-
+<script src="atividade01.html.js"></script>
 </body>
-
 </html>
