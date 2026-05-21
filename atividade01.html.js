@@ -16,3 +16,15 @@ elementoCor.addEventListener("input", (e) => {
         corNova
     );
 });
+
+document.addEventListener("DOMContentLoaded", async () =>
+{
+    const rootStyles = window.getComputedStyle
+    (document.documentElement)
+
+    const primaryColor = rootStyles.getPropertyValue("--primary-color").trim();
+
+    elementoCor.value = primaryColor;
+
+
+});
