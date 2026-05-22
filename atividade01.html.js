@@ -1,30 +1,36 @@
 const elementoForm = document.getElementById("formulario");
 
-elementoForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+elementoForm.addEventListener("submit",(e) => e.preventDefault());
 
-    alert("Formulário enviado!");
-});
+const seletorCor = document.getElementById("corFavorita");
 
-const elementoCor = document.getElementById("corFavorita");
-
-elementoCor.addEventListener("input", (e) => {
+seletorCor.addEventListener("input", (e) =>{
     let corNova = e.target.value;
+    localStorage.setItem("primaryColor", corNova);
 
-    document.documentElement.style.setProperty(
-        "--primary-color",
-        corNova
-    );
+    document.documentElement.style.setProperty("--primary-color", corNova);
 });
 
-document.addEventListener("DOMContentLoaded", async () =>
+document.addEventListener("DOMContentLoaded", () =>
 {
-    const rootStyles = window.getComputedStyle
-    (document.documentElement)
+    if (localStorage.getItem("primaryColor")) {
 
-    const primaryColor = rootStyles.getPropertyValue("--primary-color").trim();
+        seletorCor.value = localStorage.getItem("primaryColor");
 
-    elementoCor.value = primaryColor;
+        document.documentElement.style.setProperty("--primary-color", seletorCor.value);
 
+    } else {
 
-});
+        const rootStyles = window.getComputedStyle(document.documentElement);
+
+        const primaryColor = rootStyles.getPropertyValue("--primary-color").trim();
+
+        seletorCor.value = primaryColor;
+    }
+
+    const rootStyles = window.getComputedStyle(document.documentElement);
+
+    const prymaryColor = rootStyles.getPropertyValue("--primary-color").trim();
+
+    seletorCor.value = prymaryColor;
+})
